@@ -15,7 +15,7 @@ import pt.procurainterna.injection4j.provider.UnresolvedDependencyException;
 public class Example {
   
   public void run() {
-    final ModuleBuilder moduleBuilder = new MapModuleBuilder();
+    ModuleBuilder moduleBuilder = new MapModuleBuilder();
     
     // Configure the dependencies
     moduleBuilder.addValue(String.class, "Foo");
@@ -25,16 +25,16 @@ public class Example {
     moduleBuilder.addInvocation(ClassWithDependencies.class, ClassWithDependencies::new, String.class, Integer.class);
 
     // Obtain a modular representation of the configuration. Can be combined with other modules.
-    final Module module = moduleBuilder.build();
+    Module module = moduleBuilder.build();
     
     // This provider uses the module to perform dependency injection
-    final Provider provider = new RecursiveModuleProvider(module);
+    Provider provider = new RecursiveModuleProvider(module);
 
     // Use the provider to obtain an instance of the desired class
-    final ClassWithDependencies provided = provider.provide(ClassWithDependencies.class);
+    ClassWithDependencies provided = provider.provide(ClassWithDependencies.class);
     
-    final String string = provided.string; // is "Foo", as configured
-    final Integer integer = provider.integer; // is 42, as configured
+    String string = provided.string; // is "Foo", as configured
+    Integer integer = provider.integer; // is 42, as configured
   }
 
   public static class ClassWithDependencies {
