@@ -10,7 +10,6 @@ import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.module.ModuleBuilder;
 import pt.procurainterna.injection4j.provider.Provider;
 import pt.procurainterna.injection4j.provider.RecursiveModuleProvider;
-import pt.procurainterna.injection4j.provider.UnresolvedDependencyException;
 
 public class Example {
   
