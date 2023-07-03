@@ -30,8 +30,8 @@ public final class Strategies {
 
   public static <T, A> Strategy<T> fromInvocation(Class<T> type,
       OneArgumentInvocation<? extends T, ? super A> invocation, Class<A> argumentType) {
-    return fetch -> {
-      final A argumentValue = fetch.fetch(argumentType);
+    return fetcher -> {
+      final A argumentValue = fetcher.fetch(argumentType);
 
       return invocation.invoke(argumentValue);
     };
@@ -40,9 +40,9 @@ public final class Strategies {
   public static <T, A, B> Strategy<T> fromInvocation(Class<T> type,
       TwoArgumentsInvocation<? extends T, ? super A, ? super B> invocation, Class<A> firstArgument,
       Class<B> secondArgument) {
-    return fetch -> {
-      final A firstValue = fetch.fetch(firstArgument);
-      final B secondValue = fetch.fetch(secondArgument);
+    return fetcher -> {
+      final A firstValue = fetcher.fetch(firstArgument);
+      final B secondValue = fetcher.fetch(secondArgument);
 
       return invocation.invoke(firstValue, secondValue);
     };
@@ -51,10 +51,10 @@ public final class Strategies {
   public static <T, A, B, C> Strategy<T> fromInvocation(Class<T> type,
       ThreeArgumentsInvocation<? extends T, ? super A, ? super B, ? super C> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument) {
-    return fetch -> {
-      final A firstValue = fetch.fetch(firstArgument);
-      final B secondValue = fetch.fetch(secondArgument);
-      final C thirdValue = fetch.fetch(thirdArgument);
+    return fetcher -> {
+      final A firstValue = fetcher.fetch(firstArgument);
+      final B secondValue = fetcher.fetch(secondArgument);
+      final C thirdValue = fetcher.fetch(thirdArgument);
 
       return invocation.invoke(firstValue, secondValue, thirdValue);
     };
@@ -64,11 +64,11 @@ public final class Strategies {
       FourArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument) {
-    return fetch -> {
-      final A firstValue = fetch.fetch(firstArgument);
-      final B secondValue = fetch.fetch(secondArgument);
-      final C thirdValue = fetch.fetch(thirdArgument);
-      final D fourthValue = fetch.fetch(fourthArgument);
+    return fetcher -> {
+      final A firstValue = fetcher.fetch(firstArgument);
+      final B secondValue = fetcher.fetch(secondArgument);
+      final C thirdValue = fetcher.fetch(thirdArgument);
+      final D fourthValue = fetcher.fetch(fourthArgument);
 
       return invocation.invoke(firstValue, secondValue, thirdValue, fourthValue);
     };
@@ -78,12 +78,12 @@ public final class Strategies {
       FiveArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D, ? super E> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument, Class<E> fifthArgument) {
-    return fetch -> {
-      final A firstValue = fetch.fetch(firstArgument);
-      final B secondValue = fetch.fetch(secondArgument);
-      final C thirdValue = fetch.fetch(thirdArgument);
-      final D fourthValue = fetch.fetch(fourthArgument);
-      final E fifthValue = fetch.fetch(fifthArgument);
+    return fetcher -> {
+      final A firstValue = fetcher.fetch(firstArgument);
+      final B secondValue = fetcher.fetch(secondArgument);
+      final C thirdValue = fetcher.fetch(thirdArgument);
+      final D fourthValue = fetcher.fetch(fourthArgument);
+      final E fifthValue = fetcher.fetch(fifthArgument);
 
       return invocation.invoke(firstValue, secondValue, thirdValue, fourthValue, fifthValue);
     };
@@ -93,13 +93,13 @@ public final class Strategies {
       SixArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D, ? super E, ? super F> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument, Class<E> fifthArgument, Class<F> sixthArgument) {
-    return fetch -> {
-      final A firstValue = fetch.fetch(firstArgument);
-      final B secondValue = fetch.fetch(secondArgument);
-      final C thirdValue = fetch.fetch(thirdArgument);
-      final D fourthValue = fetch.fetch(fourthArgument);
-      final E fifthValue = fetch.fetch(fifthArgument);
-      final F sixthValue = fetch.fetch(sixthArgument);
+    return fetcher -> {
+      final A firstValue = fetcher.fetch(firstArgument);
+      final B secondValue = fetcher.fetch(secondArgument);
+      final C thirdValue = fetcher.fetch(thirdArgument);
+      final D fourthValue = fetcher.fetch(fourthArgument);
+      final E fifthValue = fetcher.fetch(fifthArgument);
+      final F sixthValue = fetcher.fetch(sixthArgument);
 
       return invocation.invoke(firstValue, secondValue, thirdValue, fourthValue, fifthValue,
           sixthValue);
@@ -109,11 +109,11 @@ public final class Strategies {
   @SafeVarargs
   public static <T, A> Strategy<T> fromUnsafeInvocation(Class<T> type,
       VarargsInvocation<? extends T, ? super A> invocation, Class<A>... arguments) {
-    return fetch -> {
+    return fetcher -> {
 
       @SuppressWarnings("unchecked") final A[] values = (A[]) new Object[arguments.length];
       for (int i = 0, limit = values.length; i < limit; i++) {
-        values[i] = fetch.fetch(arguments[i]);
+        values[i] = fetcher.fetch(arguments[i]);
       }
 
       return invocation.invoke(values);
