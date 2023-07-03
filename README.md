@@ -21,7 +21,8 @@ public class Example {
     moduleBuilder.addValue(Integer.class, 42);
     
     // Configure the constructor call to use
-    moduleBuilder.addInvocation(ClassWithDependencies.class, ClassWithDependencies::new, String.class, Integer.class);
+    moduleBuilder.addInvocation(ClassWithDependencies.class, ClassWithDependencies::new,
+        String.class, Integer.class);
 
     // Obtain a modular representation of the configuration. Can be combined with other modules.
     Module module = moduleBuilder.build();
