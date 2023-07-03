@@ -33,7 +33,7 @@ public class Example {
     ClassWithDependencies provided = provider.provide(ClassWithDependencies.class);
     
     String string = provided.string; // is "Foo", as configured
-    Integer integer = provider.integer; // is 42, as configured
+    Integer integer = provided.integer; // is 42, as configured
   }
 
   public static class ClassWithDependencies {
