@@ -55,8 +55,15 @@ class SimpleTest {
   }
 
 
-  public record ClassWithDependencies(String string, Integer integer) {
+  public static class ClassWithDependencies {
 
+    public final String string;
+    public final Integer integer;
+
+    public ClassWithDependencies(final String string, final Integer integer) {
+      this.string = string;
+      this.integer = integer;
+    }
   }
 
 }
