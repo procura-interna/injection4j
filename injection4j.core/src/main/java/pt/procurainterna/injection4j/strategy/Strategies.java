@@ -28,7 +28,7 @@ public final class Strategies {
     return fetch -> invocation.invoke();
   }
 
-  public static <T, A> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A> Strategy<T> fromInvocation(
       OneArgumentInvocation<? extends T, ? super A> invocation, Class<A> argumentType) {
     return fetcher -> {
       final A argumentValue = fetcher.fetch(argumentType);
@@ -37,7 +37,7 @@ public final class Strategies {
     };
   }
 
-  public static <T, A, B> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A, B> Strategy<T> fromInvocation(
       TwoArgumentsInvocation<? extends T, ? super A, ? super B> invocation, Class<A> firstArgument,
       Class<B> secondArgument) {
     return fetcher -> {
@@ -48,7 +48,7 @@ public final class Strategies {
     };
   }
 
-  public static <T, A, B, C> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A, B, C> Strategy<T> fromInvocation(
       ThreeArgumentsInvocation<? extends T, ? super A, ? super B, ? super C> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument) {
     return fetcher -> {
@@ -60,7 +60,7 @@ public final class Strategies {
     };
   }
 
-  public static <T, A, B, C, D> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A, B, C, D> Strategy<T> fromInvocation(
       FourArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument) {
@@ -74,7 +74,7 @@ public final class Strategies {
     };
   }
 
-  public static <T, A, B, C, D, E> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A, B, C, D, E> Strategy<T> fromInvocation(
       FiveArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D, ? super E> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument, Class<E> fifthArgument) {
@@ -89,7 +89,7 @@ public final class Strategies {
     };
   }
 
-  public static <T, A, B, C, D, E, F> Strategy<T> fromInvocation(Class<T> type,
+  public static <T, A, B, C, D, E, F> Strategy<T> fromInvocation(
       SixArgumentsInvocation<? extends T, ? super A, ? super B, ? super C, ? super D, ? super E, ? super F> invocation,
       Class<A> firstArgument, Class<B> secondArgument, Class<C> thirdArgument,
       Class<D> fourthArgument, Class<E> fifthArgument, Class<F> sixthArgument) {
@@ -107,7 +107,7 @@ public final class Strategies {
   }
 
   @SafeVarargs
-  public static <T, A> Strategy<T> fromUnsafeInvocation(Class<T> type,
+  public static <T, A> Strategy<T> fromUnsafeInvocation(
       VarargsInvocation<? extends T, ? super A> invocation, Class<A>... arguments) {
     return fetcher -> {
 

@@ -52,7 +52,7 @@ public class MapModuleBuilder implements ModuleBuilder {
   public <T> ModuleBuilder addInvocation(final Class<T> type,
       final NoArgumentsInvocation<? extends T> invocation) {
 
-    final Strategy<T> strategy = Strategies.fromInvocation(type, invocation);
+    final Strategy<T> strategy = Strategies.fromInvocation(invocation);
 
     return addToMap(type, strategy);
   }
@@ -61,7 +61,7 @@ public class MapModuleBuilder implements ModuleBuilder {
   public <T, A> ModuleBuilder addInvocation(final Class<T> type,
       final OneArgumentInvocation<? extends T, ? super A> invocation, final Class<A> argumentType) {
 
-    final Strategy<T> strategy = Strategies.fromInvocation(type, invocation, argumentType);
+    final Strategy<T> strategy = Strategies.fromInvocation(invocation, argumentType);
 
     return addToMap(type, strategy);
   }
@@ -72,7 +72,7 @@ public class MapModuleBuilder implements ModuleBuilder {
       final Class<A> firstArgument, final Class<B> secondArgument) {
 
     final Strategy<T> strategy =
-        Strategies.fromInvocation(type, invocation, firstArgument, secondArgument);
+        Strategies.fromInvocation(invocation, firstArgument, secondArgument);
 
     return addToMap(type, strategy);
   }
@@ -83,7 +83,7 @@ public class MapModuleBuilder implements ModuleBuilder {
       final Class<A> firstArgument, final Class<B> secondArgument, final Class<C> thirdArgument) {
 
     final Strategy<T> strategy =
-        Strategies.fromInvocation(type, invocation, firstArgument, secondArgument, thirdArgument);
+        Strategies.fromInvocation(invocation, firstArgument, secondArgument, thirdArgument);
 
     return addToMap(type, strategy);
   }
@@ -95,7 +95,7 @@ public class MapModuleBuilder implements ModuleBuilder {
       final Class<D> fourthArgument) {
 
     final Strategy<T> strategy =
-        Strategies.fromInvocation(type, invocation, firstArgument, secondArgument, thirdArgument,
+        Strategies.fromInvocation(invocation, firstArgument, secondArgument, thirdArgument,
             fourthArgument);
 
     return addToMap(type, strategy);
@@ -108,7 +108,7 @@ public class MapModuleBuilder implements ModuleBuilder {
       final Class<D> fourthArgument, final Class<E> fifthArgument) {
 
     final Strategy<T> strategy =
-        Strategies.fromInvocation(type, invocation, firstArgument, secondArgument, thirdArgument,
+        Strategies.fromInvocation(invocation, firstArgument, secondArgument, thirdArgument,
             fourthArgument, fifthArgument);
 
     return addToMap(type, strategy);
@@ -121,7 +121,7 @@ public class MapModuleBuilder implements ModuleBuilder {
       final Class<D> fourthArgument, final Class<E> fifthArgument, final Class<F> sixthArgument) {
 
     final Strategy<T> strategy =
-        Strategies.fromInvocation(type, invocation, firstArgument, secondArgument, thirdArgument,
+        Strategies.fromInvocation(invocation, firstArgument, secondArgument, thirdArgument,
             fourthArgument, fifthArgument, sixthArgument);
 
     return addToMap(type, strategy);
@@ -131,7 +131,7 @@ public class MapModuleBuilder implements ModuleBuilder {
   public <T, A> ModuleBuilder addUnsafeInvocation(final Class<T> type,
       final VarargsInvocation<? extends T, ? super A> invocation, final Class<A>... arguments) {
 
-    final Strategy<T> strategy = Strategies.fromUnsafeInvocation(type, invocation, arguments);
+    final Strategy<T> strategy = Strategies.fromUnsafeInvocation(invocation, arguments);
 
     return addToMap(type, strategy);
   }
