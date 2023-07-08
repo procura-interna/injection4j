@@ -49,6 +49,22 @@ public class MapModuleBuilder implements ModuleBuilder {
   }
 
   @Override
+  public <T> ModuleBuilder addSingletonSupplier(final Class<T> type,
+      final Supplier<? extends T> supplier) {
+    final Strategy<? extends T> strategy = Strategies.fromSingletonSupplier(supplier);
+
+    return addToMap(type, strategy);
+  }
+
+  @Override
+  public <T> ModuleBuilder addSynchronizedSingletonSupplier(final Class<T> type,
+      final Supplier<? extends T> supplier) {
+    final Strategy<? extends T> strategy = Strategies.fromSynchronizedSingletonSupplier(supplier);
+
+    return addToMap(type, strategy);
+  }
+
+  @Override
   public <T> ModuleBuilder addInvocation(final Class<T> type,
       final NoArgumentsInvocation<? extends T> invocation) {
 

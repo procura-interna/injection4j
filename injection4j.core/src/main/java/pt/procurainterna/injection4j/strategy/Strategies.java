@@ -23,8 +23,17 @@ public final class Strategies {
     return any -> supplier.get();
   }
 
-  public static <T> Strategy<T> fromInvocation(Class<T> type,
-      NoArgumentsInvocation<? extends T> invocation) {
+  public static <T> Strategy<T> fromSingletonSupplier(
+      final Supplier<T> supplier) {
+    return new SingletonSupplierStrategy<>(supplier);
+  }
+
+  public static <T> Strategy<? extends T> fromSynchronizedSingletonSupplier(
+      final Supplier<T> supplier) {
+    return new SynchronizedSingletonSupplierStrategy<>(supplier);
+  }
+
+  public static <T> Strategy<T> fromInvocation(NoArgumentsInvocation<? extends T> invocation) {
     return fetch -> invocation.invoke();
   }
 
