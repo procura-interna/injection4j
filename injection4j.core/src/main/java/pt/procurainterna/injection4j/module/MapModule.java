@@ -1,14 +1,14 @@
 package pt.procurainterna.injection4j.module;
 
-import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
 public class MapModule implements Module {
 
-  private final HashMap<Class<?>, Strategy<?>> map;
+  private final Map<Class<?>, Strategy<?>> map;
 
-  public MapModule(final HashMap<Class<?>, Strategy<?>> map) {
+  public MapModule(final Map<Class<?>, Strategy<?>> map) {
     this.map = map;
   }
 
