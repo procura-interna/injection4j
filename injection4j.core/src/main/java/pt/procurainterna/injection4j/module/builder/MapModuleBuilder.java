@@ -16,6 +16,10 @@ import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategies;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
+/**
+ * Meant to aid in the creation of a {@link Module}. Uses a {@link Map} as its supporting data
+ * structure.
+ */
 public class MapModuleBuilder implements ModuleBuilder {
 
   private final Map<Class<?>, Strategy<?>> map;

@@ -4,6 +4,9 @@ import java.util.Map;
 import java.util.Optional;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
+/**
+ * Uses a {@link Map} as the supporting data structure.
+ */
 public class MapModule implements Module {
 
   private final Map<Class<?>, Strategy<?>> map;
