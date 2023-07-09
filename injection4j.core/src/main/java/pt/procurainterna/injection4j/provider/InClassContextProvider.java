@@ -1,19 +1,18 @@
 package pt.procurainterna.injection4j.provider;
 
-import pt.procurainterna.injection4j.fetcher.Fetcher;
 
-class ProviderClassFetcher<T> implements Fetcher {
+class InClassContextProvider<T> implements Provider {
 
   private final Provider provider;
   private final Class<T> type;
 
-  ProviderClassFetcher(final Provider provider, final Class<T> type) {
+  InClassContextProvider(final Provider provider, final Class<T> type) {
     this.provider = provider;
     this.type = type;
   }
 
   @Override
-  public <D> D fetch(final Class<D> dependencyType) {
+  public <D> D provide(final Class<D> dependencyType) {
     try {
       return provider.provide(dependencyType);
 

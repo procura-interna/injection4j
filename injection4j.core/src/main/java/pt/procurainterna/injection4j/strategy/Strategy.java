@@ -1,9 +1,9 @@
 package pt.procurainterna.injection4j.strategy;
 
-import pt.procurainterna.injection4j.fetcher.Fetcher;
+import pt.procurainterna.injection4j.provider.Provider;
 
 public interface Strategy<T> {
 
-  T execute(Fetcher fetcher);
+  T execute(Provider provider);
 
 }

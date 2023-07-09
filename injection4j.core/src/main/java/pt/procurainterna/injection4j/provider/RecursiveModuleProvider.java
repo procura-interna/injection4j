@@ -22,7 +22,7 @@ public class RecursiveModuleProvider implements Provider {
 
     final Strategy<T> strategy = searchResult.get();
 
-    return strategy.execute(new ProviderClassFetcher<>(this, type));
+    return strategy.execute(new InClassContextProvider<>(this, type));
   }
 
 }

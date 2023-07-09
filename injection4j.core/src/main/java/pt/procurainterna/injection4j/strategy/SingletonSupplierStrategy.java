@@ -1,7 +1,7 @@
 package pt.procurainterna.injection4j.strategy;
 
 import java.util.function.Supplier;
-import pt.procurainterna.injection4j.fetcher.Fetcher;
+import pt.procurainterna.injection4j.provider.Provider;
 
 public class SingletonSupplierStrategy<T> implements Strategy<T> {
 
@@ -15,7 +15,7 @@ public class SingletonSupplierStrategy<T> implements Strategy<T> {
   }
 
   @Override
-  public T execute(final Fetcher fetcher) {
+  public T execute(final Provider provider) {
     if (!valueHasBeenSet) {
       value = supplier.get();
       valueHasBeenSet = true;
