@@ -1,6 +1,5 @@
 package pt.procurainterna.injection4j.provider;
 
-
 class InClassContextProvider<T> implements Provider {
 
   private final Provider provider;
