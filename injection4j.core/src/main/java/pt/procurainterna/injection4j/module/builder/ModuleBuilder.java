@@ -22,8 +22,6 @@ public interface ModuleBuilder {
 
   <T> ModuleBuilder addSupplier(Class<T> type, Supplier<? extends T> supplier);
 
-  <T> ModuleBuilder addSingletonSupplier(Class<T> type, Supplier<? extends T> supplier);
-
   <T> ModuleBuilder addSynchronizedSingletonSupplier(Class<T> type,
       Supplier<? extends T> supplier);
 
