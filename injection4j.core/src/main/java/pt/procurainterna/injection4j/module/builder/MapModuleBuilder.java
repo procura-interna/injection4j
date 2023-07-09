@@ -18,7 +18,15 @@ import pt.procurainterna.injection4j.strategy.Strategy;
 
 public class MapModuleBuilder implements ModuleBuilder {
 
-  private final Map<Class, Strategy> map = new HashMap<>();
+  private final Map<Class<?>, Strategy<?>> map;
+
+  public MapModuleBuilder(final Map<Class<?>, Strategy<?>> map) {
+    this.map = map;
+  }
+
+  public MapModuleBuilder() {
+    this(new HashMap<>());
+  }
 
   @Override
   public Module build() {
