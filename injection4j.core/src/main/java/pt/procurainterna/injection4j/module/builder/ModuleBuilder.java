@@ -1,4 +1,4 @@
-package pt.procurainterna.injection4j.module;
+package pt.procurainterna.injection4j.module.builder;
 
 import java.util.function.Supplier;
 import pt.procurainterna.injection4j.invocation.FiveArgumentsInvocation;
@@ -9,6 +9,7 @@ import pt.procurainterna.injection4j.invocation.SixArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.ThreeArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.TwoArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.VarargsInvocation;
+import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
 public interface ModuleBuilder {

@@ -5,9 +5,9 @@ Usage example:
 ````java
 package pt.procurainterna.injection4j.example;
 
-import pt.procurainterna.injection4j.module.MapModuleBuilder;
+import pt.procurainterna.injection4j.module.builder.MapModuleBuilder;
 import pt.procurainterna.injection4j.module.Module;
-import pt.procurainterna.injection4j.module.ModuleBuilder;
+import pt.procurainterna.injection4j.module.builder.ModuleBuilder;
 import pt.procurainterna.injection4j.provider.Provider;
 import pt.procurainterna.injection4j.provider.RecursiveModuleProvider;
 

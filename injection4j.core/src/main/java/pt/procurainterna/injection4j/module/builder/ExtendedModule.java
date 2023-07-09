@@ -1,6 +1,7 @@
-package pt.procurainterna.injection4j.module;
+package pt.procurainterna.injection4j.module.builder;
 
 import java.util.Optional;
+import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
 public class ExtendedModule implements Module {

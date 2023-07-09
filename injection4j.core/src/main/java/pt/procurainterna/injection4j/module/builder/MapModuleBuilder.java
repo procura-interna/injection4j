@@ -1,4 +1,4 @@
-package pt.procurainterna.injection4j.module;
+package pt.procurainterna.injection4j.module.builder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +11,8 @@ import pt.procurainterna.injection4j.invocation.SixArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.ThreeArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.TwoArgumentsInvocation;
 import pt.procurainterna.injection4j.invocation.VarargsInvocation;
+import pt.procurainterna.injection4j.module.MapModule;
+import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategies;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
