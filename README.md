@@ -15,7 +15,6 @@ public class SimpleExample {
   
   public void run() {
     ModuleBuilder moduleBuilder = ModuleBuilders.map();
-    
     moduleBuilder.addValue(String.class, "Foo");
 
     Module module = moduleBuilder.build();    
