@@ -55,7 +55,7 @@ public class FactoryMethodExample {
 }
 ```
 
-Factory method with one argument:
+Factory method example with one argument:
 ```java
 package pt.procurainterna.injection4j.examples;
 
