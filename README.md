@@ -5,16 +5,16 @@ Usage example:
 ```java
 package pt.procurainterna.injection4j.example;
 
-import pt.procurainterna.injection4j.module.MapModuleBuilder;
 import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.module.ModuleBuilder;
+import pt.procurainterna.injection4j.module.ModuleBuilders;
 import pt.procurainterna.injection4j.provider.Provider;
 import pt.procurainterna.injection4j.provider.Providers;
 
 public class SimpleExample {
   
   public void run() {
-    ModuleBuilder moduleBuilder = ModuleBuilder.map();
+    ModuleBuilder moduleBuilder = ModuleBuilders.map();
     
     moduleBuilder.addValue(String.class, "Foo");
 
