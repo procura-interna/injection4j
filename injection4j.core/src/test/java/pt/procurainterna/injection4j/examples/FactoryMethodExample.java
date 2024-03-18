@@ -1,6 +1,5 @@
 package pt.procurainterna.injection4j.examples;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import pt.procurainterna.injection4j.module.Module;

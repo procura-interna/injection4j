@@ -22,5 +22,4 @@ public class FactoryMethodWithArgumentExample {
     System.out.println("Executor with 2 threads at most: " + executor);
     executor.shutdown();
   }
-
 }
