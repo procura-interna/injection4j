@@ -7,18 +7,18 @@ import pt.procurainterna.injection4j.strategy.Strategy;
 /**
  * Uses a {@link Map} as the supporting data structure.
  */
-public class MapModule implements Module {
+public class MapGeneralModule<T> implements GeneralModule<T> {
 
-  private final Map<Class<?>, Strategy<?>> map;
+  private final Map<T, Strategy<?>> map;
 
-  public MapModule(final Map<Class<?>, Strategy<?>> map) {
+  public MapGeneralModule(final Map<T, Strategy<?>> map) {
     this.map = map;
   }
 
   @Override
-  public <T> Optional<Strategy<T>> strategyForType(final Class<T> type) {
+  public <T1> Optional<Strategy<T1>> strategyFor(final T key) {
     @SuppressWarnings("unchecked")
-    final Strategy<T> strategy = (Strategy<T>) map.get(type);
+    final Strategy<T1> strategy = (Strategy<T1>) map.get(key);
 
     return Optional.ofNullable(strategy);
   }

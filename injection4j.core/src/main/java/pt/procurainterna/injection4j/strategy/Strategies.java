@@ -23,7 +23,7 @@ public final class Strategies {
     return any -> supplier.get();
   }
 
-  public static <T> Strategy<? extends T> fromSynchronizedSingletonSupplier(
+  public static <T> Strategy<T> fromSynchronizedSingletonSupplier(
       final Supplier<T> supplier) {
     return new SynchronizedSingletonSupplierStrategy<>(supplier);
   }

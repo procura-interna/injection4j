@@ -1,7 +1,6 @@
-package pt.procurainterna.injection4j.module.builder;
+package pt.procurainterna.injection4j.module;
 
 import java.util.Optional;
-import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
 /**
@@ -22,7 +21,7 @@ public class ExtendedModule implements Module {
   }
 
   @Override
-  public <T> Optional<Strategy<T>> strategyFor(final Class<T> type) {
+  public <T> Optional<Strategy<T>> strategyForType(final Class<T> type) {
     final Optional<Strategy<T>> strategyFromExtension = strategyFromExtension(type);
 
     if (strategyFromExtension.isPresent()) {

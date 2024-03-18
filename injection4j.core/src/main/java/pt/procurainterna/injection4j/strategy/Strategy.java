@@ -7,6 +7,7 @@ import pt.procurainterna.injection4j.provider.Provider;
  *
  * @param <T> The type of the instance returned.
  */
+@FunctionalInterface
 public interface Strategy<T> {
 
   T execute(Provider provider);
