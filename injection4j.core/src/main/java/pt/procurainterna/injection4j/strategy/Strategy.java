@@ -1,9 +1,15 @@
 package pt.procurainterna.injection4j.strategy;
 
-import pt.procurainterna.injection4j.fetcher.Fetcher;
+import pt.procurainterna.injection4j.provider.Provider;
 
+/**
+ * Return an instance of a desired type, using a dependency injection aid if necessary.
+ *
+ * @param <T> The type of the instance returned.
+ */
+@FunctionalInterface
 public interface Strategy<T> {
 
-  T execute(Fetcher fetcher);
+  T execute(Provider provider);
 
 }

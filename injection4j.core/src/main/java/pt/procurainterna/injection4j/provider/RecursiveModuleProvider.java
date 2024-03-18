@@ -1,10 +1,16 @@
 package pt.procurainterna.injection4j.provider;
 
 import java.util.Optional;
-import pt.procurainterna.injection4j.fetcher.Fetcher;
 import pt.procurainterna.injection4j.module.Module;
 import pt.procurainterna.injection4j.strategy.Strategy;
 
+/**
+ * When executing a {@link Strategy}, if a dependency is requested, this {@link Provider} will be
+ * used to satisfy that dependency.
+ * <p/>
+ * This leads to a stack of calls to a strategy that calls this provider that calls a strategy that
+ * calls this provider, etc.
+ */
 public class RecursiveModuleProvider implements Provider {
 
   private final Module module;
@@ -23,26 +29,7 @@ public class RecursiveModuleProvider implements Provider {
 
     final Strategy<T> strategy = searchResult.get();
 
-    return strategy.execute(new SelfAsFetcher<>(type));
-  }
-
-  private class SelfAsFetcher<T> implements Fetcher {
-
-    private final Class<T> type;
-
-    private SelfAsFetcher(final Class<T> type) {
-      this.type = type;
-    }
-
-    @Override
-    public <D> D fetch(final Class<D> dependencyType) {
-      try {
-        return provide(dependencyType);
-
-      } catch (final NoStrategyFoundException e) {
-        throw new UnresolvedDependencyException(type, dependencyType, e);
-      }
-    }
+    return strategy.execute(new InClassContextProvider<>(this, type));
   }
 
 }

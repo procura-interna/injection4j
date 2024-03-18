@@ -1,8 +1,3 @@
-Reflectionless dependency injection.
-
-Usage example:
-
-```java
 package pt.procurainterna.injection4j.examples;
 
 import pt.procurainterna.injection4j.module.Module;
@@ -25,4 +20,3 @@ public class SimpleExample {
   }
 
 }
-```
