@@ -11,4 +11,12 @@ public final class Providers {
     return new RecursiveModuleProvider(module);
   }
 
+  /**
+   * Used for combining providers. When an instance of a type is being obtained, {@code extension}
+   * will be used first. If none is found, {@code base} is used.
+   */
+  public static Provider extended(final Provider base, final Provider extension) {
+    return new ExtendedProvider(base, extension);
+  }
+
 }
