@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>injection4j</artifactId>
+        <groupId>pt.procurainterna</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>injection4j.core</artifactId>
+
+    <name>Injection4j Core</name>
+    <description>
+        Dependency injection without the need for reflection heavy operations. This library can perform
+        dependency injection while only using the java.lang.Class class as a key (no use of
+        java.lang.reflect types).
+    </description>
+    <url>https://github.com/procura-interna/injection4j</url>
+
+
+    <properties>
+        <maven.compiler.release>11</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>Unlicense</name>
+            <distribution>repo</distribution>
+            <url>https://unlicense.org/</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>procurainterna</id>
+            <name>Procura Interna</name>
+            <url>https://github.com/procura-interna</url>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/procura-interna/injection4j/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git@github.com:procura-interna/injection4j.git</connection>
+        <developerConnection>scm:git@github.com:procura-interna/injection4j.git</developerConnection>
+        <url>https://github.com/procura-interna/injection4j</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
